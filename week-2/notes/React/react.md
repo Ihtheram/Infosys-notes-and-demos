@@ -1,22 +1,14 @@
 # Single Page Applications
 
-Single Page Applications or (SPA's) are webapps that render on a single page in the browser
+Single Page Applications or (SPA's) are webapps that render on a single page in the browser where all of Javascript, HTML, and CSS are loaded in and ready for the browser in one page load. During navigation, the browser never refreshes on that app because we are on the same page.
 
-All of our Javascript, HTML, and CSS are loaded in and ready for the browser in one page load
-
-During navigation, the browser never refreshes because you stay on the same page
-
-We will use React to create our SPA's
-
-The advantages of SPA's
-
+Advantages
 -   Fast and responsive
 -   Caching capability
 -   Pleasant user experience across multiple platforms
 
 Disadvantages
-
--   Don't perform well with SEO
+-   Don't perform well with SEO (Search Engine Optimization)
 -   Less secure against Cross-site scripting
 -   The page may take longer to load initially
 
@@ -26,30 +18,24 @@ React is a lightweight, Javascript **Library** created in 2011 by Facebook. It i
 
 ## Framework vs Library
 
-Frameworks are an entity that takes your code and executes a lot of abstracted away processes
-
-While the pros for a framework are that they do a lot of work from you, the cons include:
+Frameworks are an entity that takes developer's code and executes a lot of abstracted away processes. While the pros for a framework are that they do a lot of work from you, the cons include:
 - more features, bloat the size of the framework
 - less flexible with how features are used
 - must use the entire framework for one feature
 - less customizable
 
 React is a library, is only designed to enable users to declaritively describe their user interfaces
-- it doesn't benefit from the opionated nature of framework
+- it doesn't benefit from the opinionated nature of framework
 - smaller/less bulky because it is only made to do one thing
 - use other libraries/modules that you NEED to expand the functionality
 - instead of a framework doing everthing for you, the developer is responsible for connecting each component
 
 ## Tradeoffs and Cons of React
 
-React doesn't use HTML templates, you simply write your compontents in a JS/TS file, this means you must have a better understanding of JS/TS
-
-React doesn't follow a traditional MVC design pattern, all data for a component is stored in that one file, the components should be separated by concern
-
-React uses JSX instead of HTML, and JSX differs slightly from HTML, so must learn the new syntax
-
+React doesn't use HTML templates, you simply write your components in a JS/TS file, this means you must have a better understanding of JS/TS.
+React doesn't follow a traditional MVC design pattern, all data for a component is stored in that one file, the components should be separated by concern.
+React uses JSX/TSX instead of HTML, and JSX/TSX differs slightly from HTML, so must learn the new syntax.
 React versioning is updated frequently so version changes and forward compatibility need to be taken into account
-
 Online resources for React could be outdated (stackoverflow posts)
 
 Since React is so flexible, there can be a lot of decision fatigue. There are a lot of choices you have to make, which normally fall into these categories
@@ -94,16 +80,10 @@ Then finish up with setting the applications configs however you like
 Since typescript is known for its static typing, when you setup react to work with Typescript, you also have to install the special types as we saw above, and we will see these soon
 
 # React Component Architecture
-a software architecture that focuses on breaking the application into inidividual functional or logical components
-
-These components communicate with one another to create a larger application. These components should follow the Single Responsiblity Principle
+a software architecture that focuses on breaking the application into inidividual functional or logical components. These components communicate with one another to create a larger application. These components should follow the Single Responsiblity Principle.
 
 ## Single Responsibility Principle
-the programming principle that every module/component should have responsibility over a single part of the applications functionality
-
-Component based architecture helps ensure component resuability, and increased reliablity due to the reuse of existing components
-
-React follows Component Based Architecture, and you should design your components to use the Single Responsiblity Principle
+the programming principle that every module/component should have responsibility over a single part of the applications functionality. Component based architecture helps ensure component reusability, and increased reliablity due to the reuse of existing components. React follows Component Based Architecture, and you should design your components to use the Single Responsiblity Principle.
 
 ## Functional vs Class Components
 
@@ -111,31 +91,19 @@ Two ways of creating components:
 - Traditional class based
 - New, recommended way with functions
 
-Back before something known as hooks, function components were not as useful because they did not have access to react life cycle, and could not manage state, but now function components have nearly the same functionality, in less code, and nicer looking code
-
-There is actually talk now, that class components may become deprecated in the future
+Back before something known as hooks, function components were not as useful because they did not have access to react life cycle, and could not manage state, but now function components have nearly the same functionality, in less code, and nicer looking code. There is actually talk now, that class components may become deprecated in the future.
 
 ## React JSX
 
-used to create the template for React components. It looks like HMLT, but it is written inside of javascript. This gets injected into the virtual DOM and diplayed on the browser
-
-JSX uses Babel to compile it to ES6 or ES5 before everything is rendered
-
-JSX unlike HMTL is case sensitive, lowercase tags are rendered as HTLM elements, and Upercase tags are rendered as react components
-
-It is important to remember to wrap your entire JSX in a single root tag, this is because of the way react handles the DOM
+used to create the template for React components. It looks like HTML, but it is written inside of javascript. This gets injected into the virtual DOM and diplayed on the browser. JSX uses Babel to compile it to ES6 or ES5 before everything is rendered. JSX unlike HTML is case sensitive, lowercase tags are rendered as HTML elements, and uppercase tags are rendered as react components. It is important to remember to wrap the entire JSX in a single root tag, this is because of the way react handles the DOM.
 
 ## React Virtual DOM
 
-React renders the components in order to display them to the view
+React renders the components in order to display them to the view.
 
-Our react components are injected into the root html element to be displayed on the page, in fact we never leave that one html page, we just swap components in the root element of index.html
+Our react components are injected into the root html element to be displayed on the page, in fact we never leave that one html page, we just swap components in the root element of index.html.
 
-React uses a virtual DOM to map the components view to the actual DOM object (because we don't actually write HTML in react)
-
-The reason behind a virtual DOM is beause rendering the page, and updating the real DOM is costly in performance
-
-So the virtual DOM is much more lightweight than the actual DOM, which is why React uses it only to update the Real DOM when absolutely necessary
+React uses a virtual DOM to map the components view to the actual DOM object (because we don't actually write HTML in react). The reason behind a virtual DOM is because of rendering the page and updating the real DOM is costly in performance. So the virtual DOM is much more lightweight than the actual DOM, which is why React uses it only to update the Real DOM when absolutely necessary.
 
 # Class Components Overview
 
@@ -144,7 +112,7 @@ React components start with an Uppercase and follow PascalCase naming convention
 Class based are simply Javscript Classes that extend React.Component the class includes:
 - render(): returns the JSX that is structure of the component/what it is going to look like
 - constructor(): gets called when the component is instantiated, where you might want to initalize any state for your component
-    - if you component takes in any properties, use the `super()` in the constructor
+    - if a component takes in any properties, use the `super()` in the constructor
 
 
 ```tsx
@@ -179,17 +147,11 @@ export class GenericComponent extends React.Component<props:Prop,state:State> {
 React allows you to create components based off of functions
 - These are simplier, and more straight forward to write
 - With the inclusion of Hooks, functional components are now (almost) as powerful as more bulky class based components
-- The only thing with funcion based components, is that they must return JSX/TSX
+- The only thing with function based components, is that they must return JSX/TSX
 
 # React Styling Components
 
-In react we style components the same way we style HTML pages
-
-You can include inline CSS or export the CSS into style sheets which is the preferred method because you can then share styles across multiple components
-
-Since we are styling JSX/TSX and not html the keyword to set a class on an element is `className` instead of just class
-
-To link the CSS to the component you simply use node module imports and it will be linked to the component
+In react we style components the same way we style HTML pages. We can include inline CSS or export the CSS into style sheets which is the preferred method because we can then share styles across multiple components. Since we are styling JSX/TSX and not HTML, the keyword to set a class on an element is `className` instead of just class. To link the CSS to the component, we simply use node module imports and it will be linked to the component
 
 ```
 import './component.css'
@@ -200,13 +162,13 @@ import './component.css'
 
 Class based components have built in lifecycle methods for `Mounting`, `Unmounting`, `Updating`, and `Error Handling`
 
-The constructor is primarily used for initalizing data in a component
+The constructor is primarily used for initalizing data in a component.
 
-componentDidMount is primarily used for grabbing/fetching data after the page loads (component loads)
+componentDidMount is primarily used for grabbing/fetching data after the page loads (component loads).
 
-componentWillUnmount is primarily used for clean when a component is being destroyed
+componentWillUnmount is primarily used for clean when a component is being destroyed.
 
-Function based components don't extend React Component Class, so they did not have direct access to these until React version 16.8 when we introduced hooks
+Function based components don't extend React Component Class, so they did not have direct access to these until React version 16.8 when we introduced hooks.
 
 
 # State in React
